@@ -51,8 +51,8 @@ class LombokPlugin implements Plugin<Project> {
             project.dependencies.add(LOMBOK_CONFIGURATION_NAME, "org.projectlombok:lombok:${project.lombok.version}")
         }
 
-        def compile = project.configurations.getByName(JavaPlugin.COMPILE_CONFIGURATION_NAME)
-        compile.extendsFrom(configuration)
+        def compileOnly = project.configurations.getByName(JavaPlugin.COMPILE_ONLY_CONFIGURATION_NAME)
+        compileOnly.extendsFrom(configuration)
         return configuration
     }
 
